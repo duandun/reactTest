@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/libs/react/react.js"></script>
+    <script src="/libs/react/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="Hello"></div>
+    <div id="container"></div>
+
+    <script type="text/jsx">
+      var Hello = React.createClass({
+        getInitialState: function () {
+          return {
+            opacity: 1.0
+          };
+        },
+
+        componentDidMount: function () {
+          var timer = setInterval(function () {
+            // console.log(this);
+            var opacity = this.state.opacity;
+            opacity -= .05;
+            if (opacity < 0.1) {
+              opacity = 1.0;
+            }
+            this.setState({
+              opacity: opacity
+            });
+          }.bind(this), 100);
+        },
+
+        render: function () {
+          return (
+            <div style={{opacity: this.state.opacity}}>
+              Hello {this.props.name}
+            </div>
+          );
+        }
+      });
+
+      React.render(
+        <Hello name="world"/>,
+        document.getElementById('Hello')
+      );
+
+      var Search = React.createClass({
+        render: function() {
+          return (
+            <div>
+               {this.props.searchType}:<input type="text" />
+               <button>Search</button>
+            </div>
+          );
+        }
+      });
+      var Page = React.createClass({
+        render: function() {
+          return (
+            <div>
+               <h1>Welcome!</h1>
+               <Search searchType="Title" />
+               <Search  searchType="Content" />
+            </div>
+          );
+        }
+      });
+      React.render(
+        <Page />,
+        document.getElementById('container')
+      );
+
+
+    </script>
+  </body>
+</html>
