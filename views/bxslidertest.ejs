@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="/libs/jquery/dist/jquery.js"></script>
+    <script src="/libs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/libs/bxslider/jquery.bxslider.min.js"></script>
+    <link rel='stylesheet' href='/libs/bootstrap/dist/css/bootstrap.css' />
+    <link rel='stylesheet' href='/libs/bxslider/bx_styles/bx_styles.css' />
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+	    <ul class="bxslider" id="slider" >
+	      <li style="width: 600px;"><img src="/images/1.jpg" width="300"/><img src="/images/1.jpg" width="300"/></li>
+	      <li><img src="/images/2.jpg" width="300"/></li>
+	      <li><img src="/images/3.jpg" width="300"/></li>
+	      <li><img src="/images/4.jpg" width="300"/></li>
+	  </ul>
+  </div>
+	</div>
+  <script>
+      $(document).ready(function($){
+        $("#slider").bxSlider();
+      });
+  </script>
+</body>
+</html>

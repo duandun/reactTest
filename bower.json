@@ -1,0 +1,10 @@
+{
+  "name": "reactTest",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bxslider": "*",
+    "morris.js": "morrisjs#~0.5.1",
+    "react": "~0.13.3"
+  }
+}
